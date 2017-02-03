@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<!-- Simple Form -->
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Simple Form</title>
+    </head>
+    <body>
+
+        <form name="userInfo" action="/info.html" method="get">
+            <p>Please give us your information, so that we can send you spam.</p>
+            <p>Name: <input type="text" name="name"></p>
+            <p>Email: <input type="text" name="email"></p>
+            <p>Sex: <select name="sex">
+                <option>Won't say</option>
+                <option>Male</option>
+                <option>Femaile</option>
+            </select></p>
+            <p><input type="submit" name="send" value="Send!"></p>
+        </form>
+
+        <script type="text/javascript">
+
+        var spamForm = document.form.userInfo;
+        spamForm.elements.name.focus();
+
+        function validInfo (form) {
+            return form.elements.name.value !== "" && /^.+@.+\.\w{2, 4}$/.test(form.elements.email.value);
+        }
+
+        spamForm.elements.send.onlick = function() {
+            if (validInfo(spamForm)) {
+                spamForm.submit();
+            }
+            else {
+                alert('Give us a name and a valid email address!');
+            }
+        };
+        </script>
+
+    </body>
+</html>

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Spoiler alert!</title>
+    </head>
+    <body>
+        <p>The following page might include spoilers! Continue?</p>
+        <p><a href="/spoiler.html">Yes</a> (or wait five seconds)</p>
+        <p><a href="/nospoiler.html">No!</a></p>
+
+        <script type = "text/javascript">
+
+            window.setTimeout(function() {
+                document.location.href = "/spoiler.html";
+            }, 5000);
+
+        </script>
+    </body>
+</html>
