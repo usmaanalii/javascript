@@ -4,7 +4,7 @@
 
 ### Along with this book, I have completed a the majority of [Free Code Camp's](#) Front End Web Development Curriculum
 
-#### The following repositories contain the code from this platform, a large amount of which involves Javascript
+#### The following repositories contain the code from the FCC platform (a large amount of which involves Javascript_
 
 * [Algorithms](https://github.com/usyyy/freecodecamp-algorithms)
 
