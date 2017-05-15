@@ -79,15 +79,14 @@ try {
     console.log(Sasquatch);
 } catch (e) {
     console.log('Caught: ', e);
+    throw new Error('wolf');
 }
-
-throw new Error('wolf');
 
 // 1.6
 var InvalidInputError = new Error('invalid numberic input');
 
 function inputNumber () {
-    var input = Number(prompt)
+    var input = Number(prompt);
 }
 
 // 1.7

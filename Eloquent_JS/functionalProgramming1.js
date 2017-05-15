@@ -17,7 +17,8 @@ console.log(forEach(['Wampeter', 'Foma', 'Granfalloon'], console.log));
 function sum (numbers) {
     var total = 0;
     forEach(numbers, function (number) {
-        total += number; // lexical scoping means total is visible in the anon
+        // lexical scoping means total is visible in the anonymous function
+        total += number;
     }); // the anonmyous function is the 'action' parameter
     return total;
 }

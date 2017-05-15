@@ -35,11 +35,12 @@ function partial (func) {
     var knownArgs = arguments;
     return function () {
         var realArgs = [];
+        var i;
 
-        for (var i = 1; i < knownArgs.length; i++) {
+        for (i = 1; i < knownArgs.length; i++) {
             realArgs.push(knownArgs[i]);
         }
-        for (var i = 0; i < arguments.length; i++) {
+        for (i = 0; i < arguments.length; i++) {
             realArgs.push(arguments[i]);
         }
         return func.apply(null, realArgs);

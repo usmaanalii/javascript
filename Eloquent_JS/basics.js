@@ -83,8 +83,8 @@ var mysteryVariable;
 console.log(mysteryVariable); // undefined
 
 // 2.0 - Type Conversions (=== removes this)
-console.log(false == 0); // True
-console.log("" == 0); // True
+console.log(false === 0); // True
+console.log("" === 0); // True
 console.log('5' == 5); // True
 
 // 2.1
