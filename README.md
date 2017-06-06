@@ -4,7 +4,7 @@
 
 * Tutorials used to learn about testing
 
-##### The following repositories contain the code from the FCC platform (a large amount of which involves Javascript)
+##### The following repositories contain code from the FCC platform (a large amount of which involves Javascript)
 
 * [Algorithms](https://github.com/usyyy/freecodecamp-algorithms)
 
