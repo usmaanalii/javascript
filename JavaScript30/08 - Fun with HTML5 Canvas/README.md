@@ -1,16 +1,26 @@
-## Mini-project Name
+## Fun with HTML5 Canvas
 
 What I learned on this mini-project.
 
 *******
 
-### methodName
+### getContext
+
+The canvas has properties that can be modified affecting the line style.
 
 ``` javascript
-// add code here
+const ctx = canvas.getContext('2d');
+
+ctx.strokeStyle = '#BADA55';
+ctx.lineJoin = 'round';
+ctx.lineCap = 'round';
+ctx.lineWidth = 10;
 ```
 
-Description of method and its use
+### Destructuring assignment
 
-- `parameter` description
-- `parameter` description
+ES6 allows you to easily name multiple variables, via the following notation
+
+``` javascript
+[lastX, lastY] = [event.offsetX, event.offsetY];
+```
