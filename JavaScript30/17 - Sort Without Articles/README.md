@@ -1,16 +1,30 @@
-## Mini-project Name
+## Sort Without Articles
 
 What I learned on this mini-project.
 
 *******
 
-### methodName
+### replace and trim
+
+Replacing words via regex is done via the `replace` method.
 
 ``` javascript
-// add code here
+bandName.replace(/^[a |the |an ]/, '').trim()
 ```
 
-Description of method and its use
+In this case, we are targetting `a`, `the` or `an`. The spaces are used to prevent all words beginning with these words being replaced.
 
-- `parameter` description
-- `parameter` description
+Trim removes whitespace from the end of the string.
+
+- `^` Targets the start of the string
+- `|` Or operator
+
+### ES6 implicit returns
+
+If a function's sole task is to return something, it's best to use implicit returns, which doesn't need the use of the keyword `return`.
+
+``` javascript
+(a, b) => strip(a) > strip(b) ? 1 : -1
+```
+
+This example will used a `ternary operator` to return either 1 or -1.
