@@ -1,9 +1,12 @@
 {
+  "ecmaVersion": 6,
   "libs": [
-    "browser",
-    "ecmascript"
+    "browser"
   ],
   "plugins": {
-    "node": {}
+     "node": {},
+     "modules": {},
+     "requirejs": {},
+     "es_modules": {}
   }
 }
