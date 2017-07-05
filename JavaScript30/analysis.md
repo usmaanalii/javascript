@@ -4,25 +4,20 @@ This is a summary of the key information I took away from each project.
 
 ## [Contents](#contents)
 
-<!-- MarkdownTOC -->
-
 - [1. Javascript Drum Kit](#1-javascript-drum-kit)
     - [addEventListener](#addeventlistener)
     - [querySelector & querySelectorAll](#queryselector--queryselectorall)
     - [classList](#classlist)
     - [transitionend](#transitionend)
-    - [Further research](#further-research)
 - [2. JS and CSS Clock](#2-js-and-css-clock)
     - [Date object](#date-object)
     - [setInterval](#setinterval)
     - [style](#style)
     - [transform-origin](#transform-origin)
     - [transition-timing-function](#transition-timing-function)
-    - [Tasks](#tasks)
 - [3. CSS Variables](#3-css-variables)
     - [variables](#variables)
     - [dataset](#dataset)
-    - [Tasks](#tasks-1)
 - [4. Array Cardio Day 1](#4-array-cardio-day-1)
     - [filter](#filter)
     - [Array.from](#arrayfrom)
@@ -31,7 +26,6 @@ This is a summary of the key information I took away from each project.
 - [5. Flex Panel Gallery](#5-flex-panel-gallery)
     - [toggle](#toggle)
     - [event.propertyName](#eventpropertyname)
-    - [Tasks](#tasks-2)
 - [6. Type Ahead](#6-type-ahead)
     - [fetch](#fetch)
     - [RegExp](#regexp)
@@ -54,7 +48,6 @@ This is a summary of the key information I took away from each project.
     - [play and pause](#play-and-pause-1)
     - [offsetWidth](#offsetwidth)
     - [timeupdate](#timeupdate)
-    - [Tasks](#tasks-3)
 - [12. Key Sequence Detection](#12-key-sequence-detection)
     - [event.key](#eventkey)
     - [splicing an array for the last pressed 'word'](#splicing-an-array-for-the-last-pressed-word)
@@ -122,8 +115,7 @@ This is a summary of the key information I took away from each project.
     - [isTrusted](#istrusted)
     - [Recursion](#recursion)
 
-<!-- /MarkdownTOC -->
-
+[Back to top](#contents)
 *************
 
 ## 1. Javascript Drum Kit
@@ -181,6 +173,7 @@ You can listen for when a transition finishes, the length of the transition (in 
 
 - [ ] NodeList
 
+[Back to top](#contents)
 *************
 
 ## 2. JS and CSS Clock
@@ -244,6 +237,7 @@ You can use **chrome dev tools** to create your `cubic-bezier`. More info on thi
 
 - [ ] - Fix the transition judder at 0/60 seconds
 
+[Back to top](#contents)
 *************
 
 ## 3. CSS Variables
@@ -286,6 +280,7 @@ const suffix = this.dataset.sizing;
 
 - [ ] Figure out why the range slider doesn't show when using dev tools
 
+[Back to top](#contents)
 *************
 
 ## 4. Array Cardio Day 1
@@ -346,6 +341,7 @@ const transportation = data.reduce((obj, item) => {
 
 The key in this case, was to use an `empty object` as the initial value for the object, and call `obj[key]` for each iteration.
 
+[Back to top](#contents)
 *************
 
 ## 5. Flex Panel Gallery
@@ -376,6 +372,7 @@ event.propertyName.includes('flex');
 
 - [ ] Complete [What the Flexbox](https://flexbox.io/)
 
+[Back to top](#contents)
 *************
 
 ## 6. Type Ahead
@@ -412,6 +409,7 @@ This can then be used in `match()` methods for example
 return place.city.match(regex);
 ```
 
+[Back to top](#contents)
 *************
 
 ## 7. Array Cardio Day 2
@@ -454,6 +452,7 @@ Checks against the array, and returns `array id` of the item that meets the cond
 const index = comments.findIndex(comment => comment.id === 823423);
 ```
 
+[Back to top](#contents)
 *************
 
 ## 8. Fun with HTML5 Canvas
@@ -481,6 +480,7 @@ ES6 allows you to easily name multiple variables, via the following notation
 [lastX, lastY] = [event.offsetX, event.offsetY];
 ```
 
+[Back to top](#contents)
 *************
 
 ## 9. Dev Tools Domination
@@ -532,6 +532,7 @@ dogs.forEach(dog => {
 });
 ```
 
+[Back to top](#contents)
 *************
 
 ## 10. Hold Shift and Check Checkboxes
@@ -565,6 +566,7 @@ To check whether a checkbox has been checked or not, you can assess its `checked
 checkbox.checked;
 ```
 
+[Back to top](#contents)
 *************
 
 ## 11. Custom Video Player
@@ -616,6 +618,7 @@ video.addEventListener('timeupdate', handleProgress);
 
 - [ ] Complete the fullscreen functionality
 
+[Back to top](#contents)
 *************
 
 ## 12. Key Sequence Detection
@@ -646,7 +649,8 @@ The splice in this case
 - **Starts** at the end of the array
 - **Ends** when the length of the `secretCode` has been met
 
-**************
+[Back to top](#contents)
+*************
 
 ## 13. Slide in on scroll
 
@@ -693,6 +697,7 @@ sliderImage.offsetTop
 
 Properties above represent different values subject to scrolling behaviour
 
+[Back to top](#contents)
 *************
 
 ## 14. Javascript Reference vs Copying
@@ -764,6 +769,7 @@ The `Object.assign()` method takes in a
 
 - `{number: 99}` - This will modify the existing age variable in person
 
+[Back to top](#contents)
 *************
 
 ## 15. LocalStorage
@@ -859,7 +865,8 @@ Here, the `'items'` refer to the string interpretation of the object,
 whilst `JSON.parse` converts the string back to a javascript object, ready for
 use.
 
-***************
+[Back to top](#contents)
+*************
 
 ## 16. Mouse Move Shadow
 
@@ -900,7 +907,8 @@ if (this !== event.target) {
 The event in this case is attached to a `div`, and the event.target can its
 child elements.
 
-***************
+[Back to top](#contents)
+*************
 
 ## 17. Sort Without Articles
 
@@ -931,6 +939,7 @@ If a function's sole task is to return something, it's best to use implicit retu
 
 This example will used a `ternary operator` to return either 1 or -1.
 
+[Back to top](#contents)
 *************
 
 ## 18. Adding Up Times with Reduce
@@ -960,7 +969,8 @@ const [mins, secs] = timeCode.split(':').map(parseFloat);
 
 In this case, the method has been applied through `map`.
 
-**************
+[Back to top](#contents)
+*************
 
 ## 19. Webcam Fun
 
@@ -1007,7 +1017,8 @@ strip.insertBefore(link, strip.firstChild);
 
 Here, `strip` represents a div element.
 
-****************
+[Back to top](#contents)
+*************
 
 ## 20. Speech Detection
 
@@ -1040,7 +1051,8 @@ were interpreted.
 
 Another propery from this object, that was used here is `isFinal`, which attempts to detect the ending of the speech.
 
-************
+[Back to top](#contents)
+*************
 
 ## 21. Geolocation
 
@@ -1079,7 +1091,8 @@ Most of the data that you will need is contained in this object.
 Examples of this include the latitude, longitude and heading (representing
 degrees from north).
 
-************
+[Back to top](#contents)
+*************
 
 ## 22. Follow Along Link Highlighter
 
@@ -1120,7 +1133,8 @@ let top = linkCoords.top + window.scrollY;
 let left = linkCoords.left + window.scrollX;
 ```
 
-************
+[Back to top](#contents)
+*************
 
 ## 23. Speech Synthesis
 
@@ -1178,6 +1192,7 @@ stopButton.addEventListener('click', () => toggle(false));
 One caveat to this is the creation of a new function, doing this too much
 can unnecessary overhead to the code affecting its speed and efficiency.
 
+[Back to top](#contents)
 *************
 
 ## 24. Sticky Nav
@@ -1208,7 +1223,8 @@ programmatic, so that it adapts to further page modifications.
 document.body.style.paddingTop = `${nav.offsetHeight}px`;
 ```
 
-***********
+[Back to top](#contents)
+*************
 
 ## 25. Event Capture, Propogation, Bubbling and Once
 
@@ -1254,6 +1270,7 @@ as follows. This was taken from the following [article](https://www.sitepoint.co
 - `target phase` - The event target
 - `bubble phase` - From the event target back to the window
 
+[Back to top](#contents)
 *************
 
 ## 26. Stripe Follow Along Nav
@@ -1314,6 +1331,7 @@ const coords = {
 };
 ```
 
+[Back to top](#contents)
 *************
 
 ## 27. Click and Drag
@@ -1355,7 +1373,8 @@ offset to the window. The code to do this, is shown below
 startX = event.pageX - slider.offsetLeft;
 ```
 
-**************
+[Back to top](#contents)
+*************
 
 ## 28. Video Speed Controller
 
@@ -1387,7 +1406,8 @@ In this case, `minimum = 0.4` and `maximum = 4`. So, the percentage scrolled
 would fall between the two. For example `10%` is equal to
 a playBackRate of `0.43`.
 
-****************
+[Back to top](#contents)
+*************
 
 ## 29. Countdown Timer
 
@@ -1454,7 +1474,8 @@ document.customForm.addEventListener('submit', function (event) {
 Here, an event listener is attached to the form via its `name` attribute,
 and its inputs are extracted the same way off the form element (this).
 
-***************
+[Back to top](#contents)
+*************
 
 ## 30. Whack A Mole
 
