@@ -14,7 +14,6 @@ function randomHole(holes) {
     const hole = holes[idx];
 
     if (lastHole === hole) {
-        console.log('SAME');
         return randomHole(holes);
     }
 
