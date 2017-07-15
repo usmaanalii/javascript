@@ -1,0 +1,31 @@
+{
+  "name": "es6-for-everyone",
+  "version": "1.0.0",
+  "description": "Going through Wes Bos' ES6 course",
+  "main": "-",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/usyyy/javascript/tree/master/ES6ForEveryone"
+  },
+  "keywords": [
+    "es6",
+    "javascript",
+    "wesbos",
+    "learning",
+    "tutorial",
+    "webdev"
+  ],
+  "author": "Usmaan Ali",
+  "license": "ISC",
+  "devDependencies": {
+    "eslint": "^3.19.0",
+    "eslint-config-airbnb": "^15.0.2",
+    "eslint-plugin-html": "^3.1.0",
+    "eslint-plugin-import": "^2.7.0",
+    "eslint-plugin-jsx-a11y": "^5.1.1",
+    "eslint-plugin-react": "^7.1.0"
+  }
+}
