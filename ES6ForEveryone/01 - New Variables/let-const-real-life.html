@@ -6,15 +6,17 @@
 </head>
 <body>
 <script>
+
   {
     const name = 'wes';
     console.log(name);
   }
 
-  for (let i = 0; i < 10; i += 1) {
+
+  for (let i = 0; i < 10; i++) {
     console.log(i);
-    setTimeout(() => {
-      console.log(`The number is${i}`);
+    setTimeout(function () {
+      console.log('The number is ' + i);
     }, 1000);
   }
 
