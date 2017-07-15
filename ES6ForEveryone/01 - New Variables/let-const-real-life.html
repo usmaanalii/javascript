@@ -11,11 +11,11 @@
     console.log(name);
   }
 
-  for(let i = 0; i < 10; i++) {
+  for (let i = 0; i < 10; i += 1) {
     console.log(i);
-    setTimeout(function() {
-      console.log('The number is ' + i);
-    },1000);
+    setTimeout(() => {
+      console.log(`The number is${i}`);
+    }, 1000);
   }
 
 </script>
