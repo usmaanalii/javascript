@@ -29,7 +29,7 @@ if (!true) {
 console.log(x); // error
 ```
 
-************
+**********
 ## let vs const
 
 If you wish to declare a variable that you intend on changing within your
@@ -84,7 +84,7 @@ person.age = 21;
 console.log(person.age); // 23
 ```
 
-************
+**********
 ## let and const real world
 
 When it comes to scope, the issue of affecting the parent namespace was
@@ -121,7 +121,7 @@ for (let i = 0; i < 10; i++) {
 }
 ```
 
-************
+**********
 ## temporal dead zone
 
 One thing to look out for when using `const` and `let`, is that unlike
