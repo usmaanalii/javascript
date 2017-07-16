@@ -24,9 +24,9 @@
     points: 23,
     score() {
       console.log(this);
-      this.points++;
-    }
-  }
+      this.points += 1;
+    },
+  };
 
   // When you need to add a prototype method
   class Car {
@@ -37,10 +37,10 @@
   }
 
   const beemer = new Car('bmw', 'blue');
-  const subie = new Car('Subaru', 'white');
+  const subie = new Car('subaru', 'white');
 
   Car.prototype.summarize = function() {
-     return `This car is a ${this.make} in the colour ${this.colour}`;
+    return `This car is a ${this.make} in the colour ${this.colour}`;
   };
 
   // When you need arguments object
@@ -48,10 +48,10 @@
     const children = Array.from(arguments);
     return children.map((child, i) => {
       return `${child} was child #${i + 1}`;
-    })
-    console.log(arguments);
-  }
+    });
 
+    console.log(arguments);
+  };
 
 </script>
 </body>
