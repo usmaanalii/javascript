@@ -79,7 +79,7 @@ This is a summary of the key information I took away from each project.
     - [insertBefore](#insertbefore)
 - [20. Speech Detection](#20-speech-detection)
     - [SpeechRecognition\(\)](#speechrecognition)
-    - [result](#result)
+    - [end](#end)
 - [21. Geolocation](#21-geolocation)
     - [geolocation](#geolocation)
     - [watchPosition](#watchposition)
@@ -220,7 +220,7 @@ This CSS attribute can be used to determine where a given transform 'pivots' fro
 transform-origin: 100%;
 ```
 
-- `100%` - Moves the pivot from its default position (center i.e `50%`) to the end of the `x-axis`
+- `100%` - Moves the pivot from its default position (which is the center of the element i.e `50%`) to the end of the `x-axis`
 
 ### transition-timing-function
 
@@ -269,7 +269,7 @@ Can be used to access data attribute values given to HTML elements. These data e
 <input id="spacing" type="range" name="spacing" min="10" max="200" value="10" data-sizing="px">
 ```
 
-Accessing this value is done with the following code...
+You can access this value with the following code...
 
 ``` javascript
 const suffix = this.dataset.sizing;
@@ -288,7 +288,7 @@ What I learned on this mini-project.
 
 ### filter
 
-This can be used to assess each item of an array against a condition.
+This can be used to assess each item of an array against a condition, and create a new one for those that pass.
 
 ``` javascript
 const fifteen = inventors.filter(inventor => (inventor.year >= 1500 && inventor.year < 1600));
@@ -310,7 +310,7 @@ Now, you are able to apply, `map`, `reduce`, `sort` etc... to links.
 
 ### reduce
 
-This method takes an array and attempts to whittle it down to a result you require.
+This method takes an array and attempts to whittle it down to single value (or values shown in the next exanple).
 
 ``` javascript
 const totalYears = inventors.reduce((total, inventor) => {
@@ -318,13 +318,13 @@ const totalYears = inventors.reduce((total, inventor) => {
 }, 0)
 ```
 
-It's best to think of the parameters as an `accumulator` and `iterand` in this case. The `0` provides a starting point for the total, since at the start it would be `undefined`.
+It's best to think of the parameters `total` and `inventor` as an `accumulator` and `iterand`. The `0` provides a starting point for the total, since if it were ommited, it would use `undefined` to add the first iterand to.
 
 ### reduce (part 2)
 
-Perhaps a more complex use case for reduce is when trying to achieve a result for multiple elements in an array.
+Perhaps a more complex use case for reduce is when trying to reduce multiple elements in an array.
 
-The goal was to reduce each element to its accumulated number.
+The goal was to reduce each element to the number of occurrences in the array.
 
 ``` javascript
 const transportation = data.reduce((obj, item) => {
@@ -359,7 +359,7 @@ this.classList.toggle('open');
 
 ### event.propertyName
 
-When listening for `transitionend`, the event might return multiple results. Utilizing `propertyName` you can respond to a transition of choice.
+When listening for `transitionend`, the event might return multiple elements that were affected. Utilizing `propertyName` you can respond to a element with more specificity.
 
 ``` javascript
 event.propertyName.includes('flex');
@@ -380,29 +380,31 @@ What I learned on this mini-project.
 
 ### fetch
 
-In this case, fetch is used to retrieve data from a url leading to a JSON data source.
+In this case, fetch is used to retrieve data from a url which results in a JSON data source.
 
 ``` javascript
 fetch(endpoint).then(blob => blob.json());
 ```
 
-This will return a promise, that can then be resolved to retrieve the data via `json()`, the following code will add the data to an array
+This will return a promise, that can be resolved. The `json()` method can be used to retrieve the data.
+
+The following code will add the data to an array
 
 ``` javascript
 fetch(endpoint).then(blob => blob.json()).then(data => cities.push(...data));
 ```
 
-**Note** Use of the `... spread` operator to push each data object into the array instead of it entirely (which would push the entire data source at index 0)
+**Note** Use of the `... spread` operator to push each data object into the array instead of it entirely (which would push the entire data source at `index 0`)
 
 ### RegExp
 
-In order to use a variable as your matched string, you need to create a RegExp.
+In order to use a `variable` as your string to match, you need to create a `RegExp` object.
 
 ``` javascript
 const regex = new RegExp(wordToMatch, 'gi');
 ```
 
-This can then be used in `match()` methods for example
+This can then be used in `match()` methods, for example
 
 ``` javascript
 return place.city.match(regex);
@@ -437,7 +439,7 @@ const allAdults = people.every(person => (new Date()).getFullYear() - person.yea
 
 ### Array.prototype.find()
 
-Checks against the array, and returns the result of the item that meets the criteria (in this case it is an object)
+Checks against the array, and returns the result of the item, that meets the criteria (in this case it is an object)
 
 ``` javascript
 const index = comments.find(comment => comment => comment.id === 823423);
@@ -445,7 +447,7 @@ const index = comments.find(comment => comment => comment.id === 823423);
 
 ### Array.prototype.some()
 
-Checks against the array, and returns `array id` of the item that meets the condition.
+Checks against the array, and returns the `index` of the item that meets the condition.
 
 ``` javascript
 const index = comments.findIndex(comment => comment.id === 823423);
@@ -460,7 +462,7 @@ What I learned on this mini-project.
 
 ### getContext
 
-The canvas has properties that can be modified affecting the line style.
+The canvas has properties that can be modified to alter the line style.
 
 ``` javascript
 const ctx = canvas.getContext('2d');
@@ -473,7 +475,7 @@ ctx.lineWidth = 10;
 
 ### Destructuring assignment
 
-ES6 allows you to easily name multiple variables, via the following notation
+ES6 allows you to easily name multiple variables, demonstrated by the the following code
 
 ``` javascript
 [lastX, lastY] = [event.offsetX, event.offsetY];
@@ -494,7 +496,7 @@ You can use `%c` to style the text you logged to the console.
 console.log('%c This is blue by using percent c', 'color: blue');
 ```
 
-You can use log warning, errors and information to the console much like regular text
+You can also, log warning, errors and information to the console much like you would with regular text.
 
 ``` javascript
 // warning!
@@ -559,7 +561,7 @@ In this case, this is used for a `click` event
 
 ### checked
 
-To check whether a checkbox has been checked or not, you can assess its `checked` property
+To check whether a checkbox has been checked or not, you can assess its `checked` property (I heard it too...)
 
 ``` javascript
 checkbox.checked;
@@ -571,6 +573,7 @@ checkbox.checked;
 ## 11. Custom Video Player
 
 What I learned on this mini-project.
+
 You can access the `video` element and manipulate its behavior via it's properties and methods.
 
 ### play and pause
@@ -599,7 +602,7 @@ video.currentTime += 10;
 
 ### offsetWidth
 
-In this example, we had to assess how far along the cursor was for a horizontal range element, `offsetWidth` gives the length of the element, whereas `offsetX` gives the amount the cursor is along the x axis (of the element). Code shown below
+In this example, we had to assess how far along the cursor was for a horizontal range element, `offsetWidth` gives the length of the element, whereas `offsetX` gives the amount the cursor is along the x axis (of the element). The code get the time of the video relative to the scrubbed amount is shown below.
 
 ``` javascript
 const scrubTime = (event.offsetX / progress.offsetWidth) * video.duration;
@@ -607,7 +610,7 @@ const scrubTime = (event.offsetX / progress.offsetWidth) * video.duration;
 
 ### timeupdate
 
-This is a useful event that is fired when the video is playing, in this case it allowed the progress bar to fill up in time with the video
+This is a useful event that is fired when the video is playing (as in the time that the video has been playing is updated), in this case it was used to fill the progress bar proportionately.
 
 ``` javascript
 video.addEventListener('timeupdate', handleProgress);
@@ -632,14 +635,15 @@ When listening for a keyup event, you can access the name of the key being press
 event.key;
 ```
 
-This will return, for example 'Shift' if this key was pressed
+This will return, for example `Shift` if the shift key was pressed
 
 ### splicing an array for the last pressed 'word'
 
-If you are trying to match user input, you may need the last pressed 'x' digits, a cool way of doing this is to add their input to an array and apply a `splice` followed by `join`.
+If you are trying to match user input, you may need the last pressed `x` digits, a cool way of doing this is to add their input to an array and apply a `splice` followed by `join`.
 
 ``` javascript
-pressed.push(event.key)
+let pressed = [];
+pressed.push(event.key);
 pressed.splice(-secretCode.length - 1, pressed.length - secretCode.length);
 ```
 
@@ -657,8 +661,7 @@ What I learned on this mini-project.
 
 ### debounce
 
-When you want to manipulate the DOM on scroll, it's important to limit the
-number of events that need a response.
+When you want to manipulate the DOM on scroll, it's important to limit the number of events that elicit a response.
 
 ``` javascript
 function debounce(func, wait = 20, immediate = true) {
@@ -680,8 +683,7 @@ function debounce(func, wait = 20, immediate = true) {
 };
 ```
 
-The debounce method will wait 20ms before registering an event, which will
-reduce browser overhead
+The debounce method will wait 20ms before registering an event, which will reduce browser overhead
 
 ### window object
 
@@ -694,7 +696,7 @@ window.innerHeight
 sliderImage.offsetTop
 ```
 
-Properties above represent different values subject to scrolling behavior
+Properties above represent different values updated according to scrolling behavior.
 
 [Back to top](#contents)
 *************
@@ -719,15 +721,14 @@ In this case, the `age2` variable will keep its original value of `100`
 
 ### array
 
-When dealing with arrays, you need to be aware of the concept of references.
+When dealing with arrays, you need to be aware of the references.
 
 ``` javascript
 const players = ['Wes', 'Sarah', 'Ryan', 'Poppy'];
 const team = players;
 ```
 
-Here, modifying the `team` array's values will impact on the players array, for
-example
+Here, modifying the `team` array's values will modify the `players` array, for example
 
 ``` javascript
 team[3] = 'Lux';
@@ -735,8 +736,7 @@ team[3] = 'Lux';
 console.log(players[3]); // 'Lux'
 ```
 
-To leave the original array intact, you must make copies it. There are multiple
-methods of doing this, some are shown below
+To leave the original array intact, you must make copies of it. There are multiple ways of doing this, some are shown below
 
 ``` javascript
 const team2 = players.slice();
@@ -747,8 +747,8 @@ const team5 = Array.from(players);
 
 ### objects
 
-The same principle of referencing from arrays apply here.
-To copy an object to another variable, use the following example
+The same principle of referencing (from arrays) apply here.
+To copy an object to another variable, the following code would work
 
 ``` javascript
 const person = {
@@ -756,7 +756,7 @@ const person = {
     age: 80
 };
 
-const cap2 = Object.assign({}, person, { number: 99 });
+const cap2 = Object.assign({}, person, { age: 99 });
 ```
 
 The `Object.assign()` method takes in a
@@ -766,7 +766,7 @@ The `Object.assign()` method takes in a
 
 **Note**
 
-- `{number: 99}` - This will modify the existing age variable in person
+- `{age: 99}` - This will modify the existing age variable in person
 
 [Back to top](#contents)
 *************
@@ -777,8 +777,7 @@ What I learned on this mini-project.
 
 ### preventDefault
 
-This is useful if you want to stop a form submitting, which by default, will
-refresh the page (or direct you to a specified page).
+This is useful if you want to stop a form submitting, which by default, will redirect you to the form handling page.
 
 ``` javascript
 event.preventDefault();
@@ -800,8 +799,9 @@ the boolean value returned from `plate.done`
 
 ### event.target
 
-When attaching event listeners to elements, you may want to access data
-from them. In the case of form elements, with `inputs` and `labels` etc, you
+When attaching event listeners to elements, you might want to access data from them.
+
+In the case of form elements, with `inputs` and `labels` etc, you
 might not be able to distinguish which was clicked.
 
 Using event.target, you can narrow down to which element is needed.
@@ -810,16 +810,13 @@ Using event.target, you can narrow down to which element is needed.
 if (!event.target.matches('input')) return; // skip
 ```
 
-This example, will return elements clicked apart from `input's`'
+This example, will return all elements clicked other than `input's`'
 
 ### event delegation
 
-When you wish to attach an event listener to an element that doesn't exist on
-the page at the time of loading, event delegation is needed.
+When you wish to attach an event listener to an element that doesn't exist on the page, at the time of loading, `event delegation` is needed.
 
-It works by attaching the event listener to a parent element (that does exist),
-which then passes on the instruction (delegates) to the child element being
-targeted.
+It works by attaching the event listener to a parent element (that does exist), which then passes on the instruction (delegates) to the child element being targeted.
 
 ``` javascript
 itemsList.addEventListener('click', toggleDone);
@@ -839,9 +836,7 @@ function toggleDone(event) {
 
 ### localStorage
 
-Browsers, now have the ability to store local data for individual webpages and
-browsers. The data is stored as a string that can be parsed into javascript
-objects.
+Browsers, now have the ability to store local data for individual webpages and browsers. The data is stored as a string that can be parsed into javascript objects.
 
 You can set and get items from `localStorage`.
 
@@ -852,9 +847,9 @@ localStorage.setItem('items', JSON.stringify(items));
 Using `JSON.stringify()` here is necessary to convert it to a string
 representation of the object's key value pairs.
 
-An example of utilizing the data and adding it to a variable for use between
-browser reloads, is shown below. This enables your pages to have continuity
-based on existing user behavior.
+An example of utilizing the data and adding it to a variable for use between browser reloads, is shown below.
+
+This enables your pages to have continuity based on existing user behavior.
 
 ``` javascript
 const items = JSON.parse(localStorage.getItem('items'));
@@ -872,24 +867,23 @@ use.
 What I learned on this mini-project.
 ### destructuring objects
 
-This is a neat way of assigning multiple variables to a single
-objects properties.
+This is a neat way of assigning multiple `key:value` pairs to a single
+object.
 
 ``` javascript
 const { offsetWidth: width, offsetHeight: height } = hero;
 ```
 
-It can be a little confusing at first.
+It can be a little confusing at first. In this case
 
-The constants assigned here are
-
-- `width` - hero.offsetWidth
-- `height` hero.offsetHeight
+``` javascript
+hero.offsetWidth; // width
+hero.offsetHeight; // height
+```
 
 ### event offset's
 
-When you are looking at coordinates based on an event listener, you have to
-factor in the target element that is triggered.
+When you're looking at coordinates based on an event listener, you have to consider the position of the element being triggered upon.
 
 In this case, the coordinates will change when a new target is hovered over.
 
@@ -903,8 +897,7 @@ if (this !== event.target) {
 }
 ```
 
-The event in this case is attached to a `div`, and the event.target can its
-child elements.
+The event in this case is attached to a `div`, and the event.target is a child element.
 
 [Back to top](#contents)
 *************
@@ -915,7 +908,7 @@ What I learned on this mini-project.
 
 ### replace and trim
 
-Replacing words via regex is done via the `replace` method.
+Replacing words through regular expressions is done via the `replace` method.
 
 ``` javascript
 bandName.replace(/^[a |the |an ]/, '').trim()
@@ -930,13 +923,13 @@ Trim removes whitespace from the end of the string.
 
 ### ES6 implicit returns
 
-If a function's sole task is to return something, it's best to use implicit returns, which doesn't need the use of the keyword `return`.
+If a function's sole task is to return something, it's best to use implicit returns, which omits the use of the keyword `return`.
 
 ``` javascript
 (a, b) => strip(a) > strip(b) ? 1 : -1
 ```
 
-This example will used a `ternary operator` to return either 1 or -1.
+This example uses a `ternary operator` to return either 1 or -1.
 
 [Back to top](#contents)
 *************
@@ -947,8 +940,7 @@ What I learned on this mini-project.
 
 ### data selector
 
-If you give attributes a data element in the form `data-x` you can extract
-these via attribute selection, this is shown below.
+If you give elements a data element, in the form `data-x` you can extract these through attribute selection, this is shown below.
 
 ``` javascript
 const timeNodes = Array.from(document.querySelectorAll('[data-time]'));
@@ -958,9 +950,7 @@ Accessing the values for this can be done via `timeNodes.dataset.time`
 
 ### ParseFloat
 
-Numbers are extracted from HTML elements in this project, but they are stored
-as strings. Using this method you can convert them to their natural 'type'.
-This will allow math functions to be applied to them.
+Numbers are extracted from HTML elements in this project, but they are stored as strings. Using this method you can convert them to the numeric `type`. This is useful for performing mathematical operations on them.
 
 ``` javascript
 const [mins, secs] = timeCode.split(':').map(parseFloat);
@@ -978,8 +968,7 @@ What I learned on this mini-project.
 ### video
 
 The source of your video is in the form of a URL, that can be generated by the
-`navigator` object. This is done by its property `mediaDevices` which in turn
-calls a property `getUserMedia`.
+`navigator` object. This is done by accessing it's property `mediaDevices` which in turn calls a property `getUserMedia`.
 
 The result of this is a `promise` that when successful, is used to generate
 the URL.
@@ -990,21 +979,19 @@ video.src = window.URL.createObjectURL(localMediaStream);
 
 ### pixels
 
-Browsers interpret images as a series of pixels `rgba` values that are stored
-in a large array of millions of values.
+Browsers interpret images as a series of pixels, where each pixels' `rgba` values that are stored in a large two dimensional array of millions of values.
 
-In this array, every pixel has four entries, one for each `rgba`. So for example
+In these arrays, every pixel has four entries, one for each `rgba` value. So for example
 
-- [0, 1, 2, 3] Would mean a red value of 0, green value of 1 etc...
+- `[0, 1, 2, 3]` Would mean a red value of 0, green value of 1 etc...
 
-In this case, the pixels are drawn onto the canvas via `drawImage` which takes
-in the
+In this case, the pixels are drawn onto the canvas via `drawImage` which takes in the following parameters
 
-- video stream
-- starting x coordinate
-- starting y coordinate
-- width
-- height
+- `video stream`
+- `starting x coordinate`
+- `starting y coordinate`
+- `width`
+- `height`
 
 ### insertBefore
 
@@ -1025,7 +1012,7 @@ What I learned on this mini-project.
 
 ### SpeechRecognition()
 
-This is a window object that enables you to utilise your microphone for
+This is a window object that lets you use your microphone to implement
 speech recognition functionality
 
 ``` javascript
@@ -1036,7 +1023,7 @@ const recognition = new SpeechRecognition();
 
 In chrome, you need to prepend SpeechRecognition with `webkit`.
 
-### result
+### end
 
 This is the event that can be listened for when the microphone receives input.
 
@@ -1059,8 +1046,7 @@ What I learned on this mini-project.
 
 ### geolocation
 
-This is a property of the window object, that contains data about the users
-location. You must enable access for it to work.
+This is a property of the window object, that contains data about the users location. You must grant access for it to work.
 
 ``` javascript
 navigator.geolocation.watchPosition(data => {
@@ -1068,13 +1054,13 @@ navigator.geolocation.watchPosition(data => {
 
     speed.textContent = data.coords.speed;
     arrow.style.transform = `rotate(${data.coords.heading}deg)`;
-}, (error) => {
+    }, (error) => {
     console.error(error);
     alert('ENABLE GEOLOCATION!!!');
 });
 ```
 
-The geolocation object is only briefly introduced.
+The geolocation object is only introduced very briefly.
 
 ### watchPosition
 
@@ -1099,8 +1085,7 @@ What I learned on this mini-project.
 
 ### getBoundingClientRect()
 
-Used to return an elements size and position relative to the window or device
-being used.
+Used to return an elements size and position relative to the window.
 
 ``` javascript
 const linkCoords = this.getBoundingClientRect();
@@ -1113,9 +1098,8 @@ const coords = {
 }
 ```
 
-It returns an object, which represents the CSS border-boxes associated with
-the element. The values returned are read-only and can not be updated, these
-include `left`, `top`, `x` and `y`.
+It returns an object, which represents the CSS borders associated with
+the element. The values returned are read-only and can not be updated these include `left`, `top`, `x` and `y`.
 
 Values represent the `border-box` in pixels and are relative to the top-left
 of the viewport (this doesn't apply to `width` and `height` values).
@@ -1123,9 +1107,8 @@ of the viewport (this doesn't apply to `width` and `height` values).
 ### scrollX and scrollY
 
 When the scrolling position changes, the values returned above will adjust to
-be bound to the **current** `top-left` of the viewport. So, to make sure
-the values are bound to the `top-left` of the document, you need to add
-`scrollX` and `scrollY`, shown below.
+be bound to the current `top-left` of the **viewport**. So, to make sure
+the values are bound to the `top-left` of the **document**, you need to add `scrollX` and `scrollY`, shown below.
 
 ``` javascript
 let top = linkCoords.top + window.scrollY;
@@ -1141,8 +1124,7 @@ What I learned on this mini-project.
 
 ### speechSynthesisUtterance
 
-An interface for the Web Speech API. This contains the content the speech
-service will read along with options such as language and pitch.
+An interface for the Web Speech API. This contains the content that the speech service will read, along with options, such as language and pitch.
 
 ``` javascript
 const msg = new SpeechSynthesisUtterance();
@@ -1159,9 +1141,7 @@ msg.text;
 
 ### SpeechSynthesis
 
-This is the controller interface for the speech service, which can be used to
-get information about the voices available. It can also be used to start and
-pause the speech.
+This is the controller interface for the speech service, which can be used to get information about the voices available. It can also be used to start and pause the speech.
 
 ``` javascript
 speechSynthesis.paused;
@@ -1178,9 +1158,7 @@ device.
 
 ### Anonymous function
 
-At times you might want to provide a parameter to a function for use in an
-event listener. Unfortunately, doing this by a traditional function call
-will result in it being run on page load.
+At times you might want to provide a parameter to a function for use in an event listener. Unfortunately, doing this by a traditional function call will result in it being run on page load.
 
 Using an anonymous function, you can avoid this problem
 
@@ -1188,8 +1166,7 @@ Using an anonymous function, you can avoid this problem
 stopButton.addEventListener('click', () => toggle(false));
 ```
 
-One caveat to this is the creation of a new function, doing this too much
-can unnecessary overhead to the code affecting its speed and efficiency.
+One caveat to this is the creation of a new function, doing this too much, can unnecessary overhead to the code affecting its speed and efficiency.
 
 [Back to top](#contents)
 *************
@@ -1200,12 +1177,9 @@ What I learned on this mini-project.
 
 ### position: fixed
 
-Tha main purpose of this project was to learn about the effects of changing
-an elements position to `fixed`.
+Tha main purpose of this project was to learn about the effects of changing an elements position to `fixed`.
 
-When applying this property, the element is essentially taken out of the
-`DOM` vacating it's space. This causes a reshuffle for the other elements,
-which can cause a judder.
+When applying this property, the element is essentially taken out of the `DOM` vacating it's space. This causes a reshuffle for the other elements, which can cause a judder.
 
 ``` css
 .fixed-nav nav {
@@ -1216,7 +1190,7 @@ which can cause a judder.
 
 One workaround to this, is to fill in the space vacated, through `padding`.
 This can be done multiple ways, but it makes sense to make this value
-programmatic, so that it adapts to further page modifications.
+dynamic, so that it adapts to further page modifications.
 
 ``` javascript
 document.body.style.paddingTop = `${nav.offsetHeight}px`;
@@ -1231,10 +1205,10 @@ What I learned on this mini-project.
 
 ### capture
 
-When an event listener has been attached to an element, that has parents with
-the same listener, triggering the event will lead to all elements registering.
+When an event listener has been attached to an element, that has parents with the same listener, triggering the event will lead to all elements registering.
+
 By default the events will be triggered from the inside out, but
-setting `capture` to true will reverse this direction to outside in.
+setting `capture` to `true` will reverse this direction to outside in.
 
 ``` javascript
 divs.forEach(div => div.addEventListener('click', logText, {
@@ -1258,12 +1232,13 @@ divs.forEach(div => div.addEventListener('click', logText, {
 
 This is the blanket term that refers to `bubbling` and `capturing`. It
 essentially means that events will cascade up and down the document
-object model from the `event target` to the `window` object.
+object model from the event `target` to the `window` object.
 
 The direction of propagation can be both ways.
 
-One nice summary of the propagation is by dividing it into three phases,
-as follows. This was taken from the following [article](https://www.sitepoint.com/event-bubbling-javascript/).
+A nice summary of the concept is explained by dividing it into three phases. 
+
+This was taken from the following [article](https://www.sitepoint.com/event-bubbling-javascript/).
 
 - `capture phase` - From the window to the event target
 - `target phase` - The event target
@@ -1276,7 +1251,7 @@ as follows. This was taken from the following [article](https://www.sitepoint.co
 
 What I learned on this mini-project.
 
-### CSS > selector
+### CSS `>` selector
 
 This is used when you want to match **direct** children elements.
 
@@ -1289,12 +1264,10 @@ will be selected.
 
 ### Using multiple classes for progressive effects
 
-In this project, an element needs to be displayed and faded in. It's initially
-given the `display: none`, which means it can't be faded in from this state.
+In this project, an element needs to be displayed and faded in. It's initially given the `display: none`, which means transitions can't be applied directly.
 
-By utilizing multiple classes and adding them sequentially, you can first
-add it to the page through a class with `display: block`, then add a second
-class with the desired transformation effect.
+By using multiple classes and adding them sequentially, you can first
+add the element to the page through a class with the property `display: block`, then add a second class with the desired transformation properties.
 
 This is shown, in the following code.
 
@@ -1303,14 +1276,11 @@ this.classList.add('trigger-enter');
 setTimeout(() => this.classList.contains('trigger-enter') && this.classList.add('trigger-enter-active'), 150);
 ```
 
-**Note**, a delay of 150ms has been added before adding the second class, this
-is for aesthetic purposes.
+**Note**, a delay of 150ms has been added before adding the second class, this is to maintain order.
 
 ### getBoundingClientRect modification
 
-This object, will be default give values based on the current viewport's
-top-left point. On occasion, you might want the element you are targeting to
-be based on another element.
+This object, will by default, give values based on the current viewport's `top-left` point. On occasion, you might want the element you are targeting to be based on another element.
 
 To do this, you must get that element's values via `getBoundingClientRect` and
 subtract these from the element you are targeting.
@@ -1339,9 +1309,8 @@ What I learned on this mini-project.
 
 ### Flag variable
 
-These can be used to control the flow of a method of piece of functionality.
-They are mainly used to hold a value such as `true` until some condition
-changes and it is changed.
+These can be used to control the flow of a method or other piece of functionality.
+They are mainly used to hold a value such as `true` until some condition changes and it is changed.
 
 ``` javascript
 let isDown = false;
@@ -1365,8 +1334,7 @@ event.pageX
 ```
 
 If a margin or padding is added, then the `pageX` value will be off,
-to compensate for this, you can subtract this from the parent element's
-offset to the window. The code to do this, is shown below
+to compensate for this adjustment, you can subtract the pixels changed from the parent element's offset to the window. The code to do this, is shown below
 
 ``` javascript
 startX = event.pageX - slider.offsetLeft;
@@ -1381,28 +1349,26 @@ What I learned on this mini-project.
 
 ### offsetHeight
 
-This property represents the height of an element, including vertical padding
-and borders. It is measured in pixels and is returned as an integer.
+This property represents the height of an element, including vertical padding and borders. It is measured in `pixels` and is returned as an integer.
 
 ``` javascript
 const percent = y / this.offsetHeight;
 ```
 
-Here, this was used to in the percentage calculation used to fill
+Here, this was used in the percentage calculation used to fill
 the speed-bar.
 
 ### Normalize value
 
 It makes sense for the speed-bar to have appropriate minimum and
-maximum values, because of this it made sense to normalize the percentage
-scrolled to these values.
+maximum values, so normalization was used to map the percentage to these `minimum` and `maximum` values.
 
 ``` javascript
-const playBackRate = percent * (max - min) + min;
+const playBackRate = (percent / (max - min)) + min;
 ```
 
 In this case, `minimum = 0.4` and `maximum = 4`. So, the percentage scrolled
-would fall between the two. For example `10%` is equal to
+would fall between the two. For example `10%` is approximately equal to
 a playBackRate of `0.43`.
 
 [Back to top](#contents)
@@ -1424,7 +1390,7 @@ When you wish for a function or code snippet to run every so often,
 countdown = setInterval(() => {
     // method
     const secondsLeft = Math.round((then - Date.now()) / 1000);
-}, 1000); // time delay
+    }, 1000); // time delay
 ```
 
 In this case, an anonymous function which defines a constant is run every
@@ -1439,8 +1405,7 @@ function call), they will both run, which can cause erratic behavior.
 clearInterval(countdown);
 ```
 
-Here, the timed, repeated method is assigned to `countdown`, therefore
-clearing the variable does the job of cancelling the method calls.
+Here, the method to be ran under a time interval is assigned to `countdown`, therefore clearing the variable does the job of cancelling the method calls.
 
 ### Working with timestamps
 
@@ -1470,8 +1435,8 @@ document.customForm.addEventListener('submit', function (event) {
 });
 ```
 
-Here, an event listener is attached to the form via its `name` attribute,
-and its inputs are extracted the same way off the form element (this).
+Here, an event listener is attached to the form via its `name` attribute `(customForm)`,
+and its inputs are extracted by accessing properties off `(this)`.
 
 [Back to top](#contents)
 *************
@@ -1482,9 +1447,7 @@ What I learned on this mini-project.
 
 ### isTrusted
 
-Here, the `click` event is important in determining the outcome of the game,
-therefore we need to protect from falsely initiating them via scripts or
-other modifications.
+Here, the `click` event is important in determining the outcome of the game, therefore we need to protect from falsely initiating them via scripts or any other modifications.
 
 Using the `isTrusted` property allows you to ensure the event was generated
 by a user action.
@@ -1522,3 +1485,8 @@ Here, the `lastHole` variable will be assigned the randomly generated hole,
 if the following call generates the same hole, the `randomHole` will be
 çalled again until `lastHole doesn't equal hole`.
 
+## Final Remark
+
+This course does a really good job, of providing real world examples of javascript. This will definitely help you to retain information better than simply reading. 
+
+I highly recommend the course, so take it, if you have the time!
