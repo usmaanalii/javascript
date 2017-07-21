@@ -45,7 +45,7 @@ This is a summary of the key information I took away from each project.
     - [checked](#checked)
 - [11. Custom Video Player](#11-custom-video-player)
     - [play and pause](#play-and-pause)
-    - [play and pause](#play-and-pause-1)
+    - [currentTime](#currenttime)
     - [offsetWidth](#offsetwidth)
     - [timeupdate](#timeupdate)
 - [12. Key Sequence Detection](#12-key-sequence-detection)
@@ -93,7 +93,7 @@ This is a summary of the key information I took away from each project.
     - [Anonymous function](#anonymous-function)
 - [24. Sticky Nav](#24-sticky-nav)
     - [position: fixed](#position-fixed)
-- [25. Event Capture, Propogation, Bubbling and Once](#25-event-capture-propogation-bubbling-and-once)
+- [25. Event Capture, Propagation, Bubbling and Once](#25-event-capture-propagation-bubbling-and-once)
     - [capture](#capture)
     - [once](#once)
     - [Event Propagation](#event-propagation)
@@ -141,14 +141,13 @@ const key = document.querySelector(`.key[data-key="${event.keyCode}"]`);
 const keys = document.querySelectorAll('.key');
 ```
 
-This will return the HTML element you trying to select (or all of them as a NodeList*), an example of what will be returned for `key` is shown below.
+This will return the HTML element you trying to select (or all of them as a NodeList), an example of what will be stored in `key` is shown below.
 
 ``` html
 <div data-key="65" class="key">
     <kbd>A</kbd>
     <span class="sound">clap</span>
 </div>
-
 ```
 
 ### classList
@@ -167,11 +166,11 @@ This quite simply adds classes like you would in jQuery with `key.addClass`.
 key.addEventListener('transitionend', removeTransition)
 ```
 
-You can listen for when a transition finishes, the length of the transition (in this case) was given by the following CSS `transition: all .07s ease;`
+You can listen for when a transition finishes, the length of the transition (in this case) was given in the following CSS `transition: all .07s ease;`
 
 ### Further research
 
-- [ ] NodeList
+- [x] NodeList
 
 [Back to top](#contents)
 *************
@@ -182,7 +181,7 @@ What I learned on this mini-project.
 
 ### Date object
 
-You can extract the second, minute and hour of the date object by accessing it's object methods.
+You can extract the `second`, `minute` and `hour` of the date object by accessing it's object methods.
 
 ``` javascript
 const seconds = now.getSeconds();
@@ -192,7 +191,7 @@ const hours = now.getHours();
 
 ### setInterval
 
-This can be used to perform a function at a given interval, 1000 is equal to 1 second.
+This can be used to perform a function at a given interval, here, 1000 is equal to 1 second.
 
 ``` javascript
 setInterval(setDate, 1000);
@@ -246,7 +245,7 @@ What I learned on this mini-project.
 
 ### variables
 
-Like SASS, you can create variables for use throughout your stylsheet.
+Like SASS, you can create variables for use throughout your stylesheet.
 
 ``` CSS
 /* Definition */
@@ -260,7 +259,7 @@ Like SASS, you can create variables for use throughout your stylsheet.
 
 The prefix `--` is necessary.
 
-**Note** - Remember, that this can be overruled by capitalising on the cascading property of CSS.
+**Note** - Remember, that this can be overruled by capitalizing on the cascading property of CSS.
 
 ### dataset
 
@@ -311,7 +310,7 @@ Now, you are able to apply, `map`, `reduce`, `sort` etc... to links.
 
 ### reduce
 
-This method takes an array and attempts to wittle it down to a result you require.
+This method takes an array and attempts to whittle it down to a result you require.
 
 ``` javascript
 const totalYears = inventors.reduce((total, inventor) => {
@@ -323,7 +322,7 @@ It's best to think of the parameters as an `accumulator` and `iterand` in this c
 
 ### reduce (part 2)
 
-Perhaps a more complex use case for reduce is when trying to acheieve a result for multiple elements in an array.
+Perhaps a more complex use case for reduce is when trying to achieve a result for multiple elements in an array.
 
 The goal was to reduce each element to its accumulated number.
 
@@ -360,7 +359,7 @@ this.classList.toggle('open');
 
 ### event.propertyName
 
-When listening for `transitionend`, the event might return multiple results. Utilising `propertyName` you can respond to a transition of choice.
+When listening for `transitionend`, the event might return multiple results. Utilizing `propertyName` you can respond to a transition of choice.
 
 ``` javascript
 event.propertyName.includes('flex');
@@ -572,7 +571,7 @@ checkbox.checked;
 ## 11. Custom Video Player
 
 What I learned on this mini-project.
-You can access the `video` element and manipulate its behaviour via it's properties and methods.
+You can access the `video` element and manipulate its behavior via it's properties and methods.
 
 ### play and pause
 
@@ -590,7 +589,7 @@ const method = video.paused ? 'play' : 'pause';
 video[method]();
 ```
 
-### play and pause
+### currentTime
 
 To move along a video you can change its `currentTime` property
 
@@ -695,7 +694,7 @@ window.innerHeight
 sliderImage.offsetTop
 ```
 
-Properties above represent different values subject to scrolling behaviour
+Properties above represent different values subject to scrolling behavior
 
 [Back to top](#contents)
 *************
@@ -820,7 +819,7 @@ the page at the time of loading, event delegation is needed.
 
 It works by attaching the event listener to a parent element (that does exist),
 which then passes on the instruction (delegates) to the child element being
-targetted.
+targeted.
 
 ``` javascript
 itemsList.addEventListener('click', toggleDone);
@@ -853,9 +852,9 @@ localStorage.setItem('items', JSON.stringify(items));
 Using `JSON.stringify()` here is necessary to convert it to a string
 representation of the object's key value pairs.
 
-An example of utilising the data and adding it to a variable for use between
+An example of utilizing the data and adding it to a variable for use between
 browser reloads, is shown below. This enables your pages to have continuity
-based on existing user behaviour.
+based on existing user behavior.
 
 ``` javascript
 const items = JSON.parse(localStorage.getItem('items'));
@@ -894,7 +893,7 @@ factor in the target element that is triggered.
 
 In this case, the coordinates will change when a new target is hovered over.
 
-Adding the elements offsets from the targetted element can counteract this.
+Adding the elements offsets from the targeted element can counteract this.
 An example is shown below
 
 ``` javascript
@@ -922,7 +921,7 @@ Replacing words via regex is done via the `replace` method.
 bandName.replace(/^[a |the |an ]/, '').trim()
 ```
 
-In this case, we are targetting `a`, `the` or `an`. The spaces are used to prevent all words beginning with these words being replaced.
+In this case, we are targeting `a`, `the` or `an`. The spaces are used to prevent all words beginning with these words being replaced.
 
 Trim removes whitespace from the end of the string.
 
@@ -1049,7 +1048,7 @@ The result of this, is a `SpeechRecognitionResultList` object which has
 many properties, one of which is the `transcript` containing the words that
 were interpreted.
 
-Another propery from this object, that was used here is `isFinal`, which attempts to detect the ending of the speech.
+Another property from this object, that was used here is `isFinal`, which attempts to detect the ending of the speech.
 
 [Back to top](#contents)
 *************
@@ -1226,7 +1225,7 @@ document.body.style.paddingTop = `${nav.offsetHeight}px`;
 [Back to top](#contents)
 *************
 
-## 25. Event Capture, Propogation, Bubbling and Once
+## 25. Event Capture, Propagation, Bubbling and Once
 
 What I learned on this mini-project.
 
@@ -1293,7 +1292,7 @@ will be selected.
 In this project, an element needs to be displayed and faded in. It's initially
 given the `display: none`, which means it can't be faded in from this state.
 
-By utilising multiple classes and adding them sequentially, you can first
+By utilizing multiple classes and adding them sequentially, you can first
 add it to the page through a class with `display: block`, then add a second
 class with the desired transformation effect.
 
@@ -1310,11 +1309,11 @@ is for aesthetic purposes.
 ### getBoundingClientRect modification
 
 This object, will be default give values based on the current viewport's
-top-left point. On occasion, you might want the element you are targetting to
+top-left point. On occasion, you might want the element you are targeting to
 be based on another element.
 
 To do this, you must get that element's values via `getBoundingClientRect` and
-subtract these from the element you are targetting.
+subtract these from the element you are targeting.
 
 An example is shown below, where the `dropdown` is positioned based on the
 'nav'.
@@ -1433,8 +1432,8 @@ In this case, an anonymous function which defines a constant is run every
 
 In order to clear the `countdown` variable i.e stop the method running
 via `setInterval` you need to clear it. If you don't do this, and
-try to run this method whilst it's already running (thorugh another
-function call), they will both run, which can cause erratic behaviour.
+try to run this method whilst it's already running (through another
+function call), they will both run, which can cause erratic behavior.
 
 ``` javascript
 clearInterval(countdown);
