@@ -19,14 +19,15 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/dompurify/0.8.2/purify.min.js"></script>
 <script>
   function sanitize(strings, ...values) {
-    const dirty = strings.reduce((prev, next, i) => `${prev}${next}${values[i] || ''}`, '');
+    const dirty = strings.reduce((prev, next, index) => `${prev}${next}${values[index] || ''}`, '');
+
     return DOMPurify.sanitize(dirty);
   }
 
   const first = 'Wes';
-  const aboutMe = `I love to do evil <img src="http://unsplash.it/100/100?random" onload="alert('you got hacked');" />`;
+  const aboutMe = sanitize`I love to do evil <img src="http://unsplash.it/100/100?random" onload="alert('you got hacked');" />`;
 
-  const html = sanitize`
+  const html = `
     <h3>${first}</h3>
     <p>${aboutMe}</p>
   `;

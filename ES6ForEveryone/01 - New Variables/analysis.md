@@ -1,6 +1,6 @@
 # ES6 For Everyone - New Variables: Creation, Updating and Scoping
 
-## var scoping refresher
+## var Scoping Refresher
 
 The introduction of `let` and `const` fixes a particular associated with `var`.
 
@@ -31,8 +31,9 @@ if (!true) {
 console.log(x); // error
 ```
 
+[Back to top](#top)
 **********
-## let vs const
+## let VS const
 
 If you wish to declare a variable that you intend on changing within your code then `let` assignments should be used.
 
@@ -81,8 +82,9 @@ person.age = 21;
 console.log(person.age); // 23
 ```
 
+[Back to top](#top)
 **********
-## let and const real world
+## let and const in the Real World
 
 Dealing with scoping conflicts was a common issue for many programmers using `ES2015`. To counteract this, using `IIFE's` was fairly common. This would basically wrap any variables you declare inside a function scope resulting in
 a less poluted global namespace.
@@ -115,8 +117,9 @@ for (let i = 0; i < 10; i++) {
 }
 ```
 
+[Back to top](#top)
 **********
-## temporal dead zone
+## Temporal Dead Zone
 
 One thing to look out for when using `const` and `let`, is that unlike
 `var`, trying to use the variable **before** it was declared,
@@ -131,7 +134,7 @@ When using `var` variables before declaration, you will get `undefined`, this
 is because the actual assigned value can't be accessed, but the fact that
 it has been assigned is acknowledged.
 
-## Is var dead? What should I use?
+## Is var Dead? What Should I use?
 
 There are many different methodologies to choose from, but I will be using
 the following guideline.

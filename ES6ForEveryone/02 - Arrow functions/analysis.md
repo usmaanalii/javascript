@@ -1,6 +1,6 @@
 # Function Improvements: Arrows and Default Arguments
 
-## Arrow functions → →
+## Arrow Functions Introduction
 
 This is a really nice upgrade, that allows you to use anonymous functions
 much more concisely. We can now ditch the traditional `function`
@@ -25,7 +25,9 @@ One caveat of these however, is that `errors` might be harder to debug, since th
 const sayMyName = (name) => { alert(`Hello ${name}`); };
 ```
 
-## Arrow functions examples
+[Back to top](#top)
+**********
+## More Arrow Functions Examples
 
 When you wish to return an `object` literal from the arrow function,
 you might be confused, since `{ }` are used to wrap the function statements.
@@ -51,7 +53,9 @@ const ages = [23, 54, 40, 67, 10, 16];
 const old = ages.filter(age => age >= 50);
 ```
 
-## Arrow functions and `this`
+[Back to top](#top)
+**********
+## Arrow Functions and `this`
 
 Traditional function definitions still have their place in Javascript. It all has to do with the differences in how `this` is treated between them and arrow functions.
 
@@ -68,7 +72,9 @@ box.addEventListener('click', () => {
 })
 ```
 
-## Default arguments
+[Back to top](#top)
+**********
+## Default Function Arguments
 
 This neat update allows you to provide arguments to functions that you might expect to remain consistent when called (but also offer customization).
 
@@ -78,13 +84,15 @@ function calculateBill(total, tax = 0.13, tip = 0.15) {
 }
 ```
 
-By giving the parameters `tax` and `tip` values right away, they can be omitted in the method call. 
+By giving the parameters `tax` and `tip` values right away, they can be omitted in the method call.
 
 An example being `calculateBill(20)` which will use the default values `0.13` and `0.15` respectively.
 
 If you wish to modify one of the default arguments, then go ahead and add `undefined` at it's position, like so `calculateBill(20, undefined, 0.12)`.
 
-## When **NOT** to use arrow functions
+[Back to top](#top)
+**********
+## When **NOT** To Use Arrow Functions
 
 When you wish to create a new scope and use variables local to it, then traditional `function() {}` syntax should be used, if scope isn't important and `this` is going to be needed then `() => {}` is the way to go.
 

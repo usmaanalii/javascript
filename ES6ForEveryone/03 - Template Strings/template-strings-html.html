@@ -17,16 +17,14 @@
     <div class="person">
       <h2>
         ${person.name}
-        <span class="job">${person.job}</span>
+        <span class="job"></span>
+        <p class="location">${person.city}</p>
+        <p class="bio">${person.bio}</p>
       </h2>
-      <p class="location">${person.city}</p>
-      <p class="bio">${person.bio}</p>
     </div>
   `;
 
-  console.log(markup);
   document.body.innerHTML = markup;
-
 </script>
 </body>
 </html>
