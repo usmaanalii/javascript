@@ -16,22 +16,24 @@ const model = 'x5';
 const colour = 'Royal Blue';
 
 // .startsWith()
+course.startsWith('RFB');
+flightNumber.startsWith('AC', 3);
 
 // .endsWith()
+flightNumber.endsWith('jz');
+accountNumber.endsWith('RT', 11);
 
 // .includes()
+flightNumber.includes('z');
 
 // .repeat()
-
 function leftPad(str, length = 20) {
-  return `→ ${' '.repeat(length - str.length)}${str}`;
+  return `➡️ ${' '.repeat(length - str.length)}${str}`;
 }
 
 console.log(leftPad(make));
 console.log(leftPad(model));
 console.log(leftPad(colour));
-
-
 </script>
 
 </body>
