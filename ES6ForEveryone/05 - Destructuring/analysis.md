@@ -51,3 +51,33 @@ If you are naming variables from an object that has a property that you wish to 
 const settings = { width: 300, color: 'black' } // height, fontsize
 const { width = 100, height = 100, color = 'blue', fontsize = 5 } = settings;
 ```
+
+[Back to top](#top)
+**********
+
+## Destructuring Arrays
+
+Much like objects, arrays see a tremendous benefit from the ability to destructure its values. Renaming multiple variables is exactly the same, but uses the `[ ]` brackets instead.
+
+``` javascript
+const details = ['Wes Bos', 123, 'wesbos.com'];
+const [name, id, website] = details;
+```
+
+You can also utilize this functionality to destructure `strings`. Let's say you have a long string, with values that are separated by the same value, like a `,`. It's simply the case of using `split()` to turn the string into an array and then destructure, like so...
+
+``` javascript
+const data = 'Basketball,Sports,902190,23,wes,bos,cool';
+const [itemName, category, sku, inventory] = data.split(',');
+```
+
+A really neat feature that will be looked at in more depth later on in the course, is the `rest` operator. This works how it sounds (in this context). Let's say you have an array of 7 values, but you only wish to destructure 3 of them. The way that the destructuring of arrays work is that, the remaining 4 values will be discarded.
+
+Fortunately, the `rest` operator allows you to add the remaining values to an array named after the value provided.
+
+``` javascript
+const team = ['Wes', 'Harry', 'Sarah', 'Keegan', 'Riker'];
+const [captain, assistant, ...players] = team;
+```
+
+Here, `players = ['Sarah', 'Keegan', 'Riker]`.
