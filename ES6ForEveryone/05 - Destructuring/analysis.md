@@ -112,3 +112,33 @@ let onSide = 'The Rock';
 **********
 
 ## Destructuring Functions - Multiple returns and named defaults
+
+You can destructure objects returned from functions similarly to the examples shown above. One thing to note in this case, is that you have the option of choosing which properties to destructure. Order doesn't matter, since the variables are assigned based on the key's you provide.
+
+``` javascript
+function convertCurrency(amount) {
+   const converted = {
+     USD: amount * 0.76,
+     GPB: amount * 0.53,
+     AUD: amount * 1.01,
+     MEX: amount * 13.30,
+   };
+   return converted;
+ }
+
+const { MEX, USD } = convertCurrency(100);
+```
+
+Perhaps, the coolest use of destructuring I have encountered thus far, is how they apply to function arguments.
+
+This new functionality allows you to define functions with an object as it's parameter(s). In doing this, you can avoid the pitfalls of having to remember the order of arguments.
+
+``` javascript
+function tipCalculator({ total = 100, tip = 0.15, tax = 0.13 } = {}) {
+   return total + (tip * total) + (tax * total);
+ }
+
+const bill = tipCalculator();
+```
+
+**Note**, the example above sets the object parameter to `{}`, this is to allow you to call the function without a parameter. It essentially gives the function call an empty object to destructure its default parameters into.
