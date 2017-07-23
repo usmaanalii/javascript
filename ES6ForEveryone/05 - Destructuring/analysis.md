@@ -142,3 +142,6 @@ const bill = tipCalculator();
 ```
 
 **Note**, the example above sets the object parameter to `{}`, this is to allow you to call the function without a parameter. It essentially gives the function call an empty object to destructure its default parameters into.
+
+[Back to top](#top)
+**********
