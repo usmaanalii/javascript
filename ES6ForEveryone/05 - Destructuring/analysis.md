@@ -81,3 +81,34 @@ const [captain, assistant, ...players] = team;
 ```
 
 Here, `players = ['Sarah', 'Keegan', 'Riker]`.
+
+[Back to top](#top)
+**********
+
+## Swapping Variables with Destructuring
+
+A real world application has been demonstrated here, involving the swapping of two variables. Traditionally, this would need a `temporary` variable to store one variable as you swap them over.
+
+``` javascript
+let inRing = 'Hulk Hogan';
+let onSide = 'The Rock';
+
+let temp = 'Hulk Hogan';
+
+inRing = onSide;
+onSide = temp;
+```
+
+Destructuring eliminates the need for this.
+
+``` javascript
+let inRing = 'Hulk Hogan';
+let onSide = 'The Rock';
+
+[inRing, onSide] = [onSide, inRing];
+```
+
+[Back to top](#top)
+**********
+
+## Destructuring Functions - Multiple returns and named defaults
