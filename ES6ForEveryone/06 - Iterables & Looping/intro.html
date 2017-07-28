@@ -22,19 +22,19 @@
   const cuts = ['Chuck', 'Brisket', 'Shank', 'Short Rib'];
   cuts.shop = 'FISHSTA'
 
-  // for (let i = 0; i < cuts.length; i += 1) {
-  //   console.log(cuts[i]);
-  // }
+  for (let i = 0; i < cuts.length; i += 1) {
+    console.log(cuts[i]);
+  }
 
-  // // Can't abort the loop or skip an item!
-  // cuts.forEach((cut) => {
-  //   console.log(cut);
-  // });
+  // Can't abort the loop or skip an item!
+  cuts.forEach((cut) => {
+    console.log(cut);
+  });
 
-  // // Iterates over EVERYTHING including added proto methods or properties
-  // for (const index in cuts) {
-  //   console.log(cuts[index]);
-  // }
+  // Iterates over EVERYTHING including added proto methods or properties
+  for (const index in cuts) {
+    console.log(cuts[index]);
+  }
 
   for (const cut of cuts) {
     if (cut === 'Brisket') {

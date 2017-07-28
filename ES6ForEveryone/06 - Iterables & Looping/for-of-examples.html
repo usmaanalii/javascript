@@ -16,31 +16,31 @@
   <p>Hi I'm p 09</p>
   <p>Hi I'm p 10</p>
 <script>
+  /* eslint-disable */
   const cuts = ['Chuck', 'Brisket', 'Shank', 'Short Rib'];
 
-  // for (const [i, cut] of cuts.entries()) {
-  //   console.log(`${cut} is the ${i + 1} item`);
-  // }
+  for (const [i, cut] of cuts.entries()) {
+    console.log(`${cut} is the ${i} item`);
+  }
 
-  // function addUpNumbers() {
-  //   let total = 0;
-  //   for (const num of arguments) {
-  //     total += num;
-  //   }
-  //   console.log(total);
-  //   return total;
-  // }
+  function addUpNumbers() {
+    let total = 0;
+    for (const num of arguments) {
+      total += num;
+    }
+    console.log(arguments);
+    return total;
+  }
+  addUpNumbers(10, 23, 52, 34, 12, 12, 123);
 
-  // addUpNumbers(10,23,52,34,12,13,123);
+  const name = 'Wes Bos';
+    for (const char of name) {
+      console.log(char);
+  }
 
-  // const name = 'Wes Bos';
-  // for (const char of name) {
-  //   console.log(char);
-  // }
-
-  const ps = document.querySelectorAll('p');
+  const ps = document.querySelectorAll('p')
   for (const paragraph of ps) {
-    paragraph.addEventListener('click', function() {
+    paragraph.addEventListener('click', function () {
       console.log(this.textContent);
     });
   }

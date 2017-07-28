@@ -245,7 +245,7 @@ What I learned on this mini-project.
 
 ### variables
 
-Like SASS, you can create variables for use throughout your stylesheet.
+Like with SASS, you can create variables for use throughout your stylesheet.
 
 ``` CSS
 /* Definition */
@@ -318,7 +318,7 @@ const totalYears = inventors.reduce((total, inventor) => {
 }, 0)
 ```
 
-It's best to think of the parameters `total` and `inventor` as an `accumulator` and `iterand`. The `0` provides a starting point for the total, since if it were ommited, it would use `undefined` to add the first iterand to.
+It's best to think of the parameters `total` and `inventor` as an `accumulator` and `iterand`. The `0` provides a starting point for the total, since if it were omitted, it would use `undefined` to add the first iterand to.
 
 ### reduce (part 2)
 
@@ -1236,7 +1236,7 @@ object model from the event `target` to the `window` object.
 
 The direction of propagation can be both ways.
 
-A nice summary of the concept is explained by dividing it into three phases. 
+A nice summary of the concept is explained by dividing it into three phases.
 
 This was taken from the following [article](https://www.sitepoint.com/event-bubbling-javascript/).
 
@@ -1487,6 +1487,6 @@ if the following call generates the same hole, the `randomHole` will be
 
 ## Final Remark
 
-This course does a really good job, of providing real world examples of javascript. This will definitely help you to retain information better than simply reading. 
+This course does a really good job, of providing real world examples of javascript. This will definitely help you to retain information better than simply reading.
 
 I highly recommend the course, so take it, if you have the time!
