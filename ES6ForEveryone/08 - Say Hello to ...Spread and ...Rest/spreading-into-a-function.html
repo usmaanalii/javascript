@@ -8,6 +8,7 @@
 <script>
   const inventors = ['Einstein', 'Newton', 'Galileo'];
   const newInventors = ['Musk', 'Jobs'];
+  // inventors.push.apply(inventors, newInventors);
   inventors.push(...newInventors);
   console.log(inventors);
 
@@ -18,9 +19,6 @@
   }
 
   sayHi(...name);
-
 </script>
 </body>
 </html>
-
-
