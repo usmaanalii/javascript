@@ -6,6 +6,7 @@
 </head>
 <body>
 <script>
+  /* eslint no-param-reassign: ["error", { "props": false }]*/
   const posts = [
     { title: 'I love JavaScript', author: 'Wes Bos', id: 1 },
     { title: 'CSS!', author: 'Chris Coyier', id: 2 },
@@ -21,16 +22,16 @@
   function getPostById(id) {
     // create a new promise
     return new Promise((resolve, reject) => {
-      // using a settimeout to mimick a databse
+      // using a setTimeout to mimic a database
       setTimeout(() => {
         // find the post we want
-        const post = posts.find(post => post.id === id);
-        if(post) {
+        const post = posts.find(singlePost => singlePost.id === id);
+        if (post) {
           resolve(post); // send the post back
         } else {
-          reject(Error('No Post Was Found!'));
+          reject(Error('No Post Was Found'));
         }
-      }, 200);
+      }, 500);
     });
   }
 
@@ -39,29 +40,24 @@
     return new Promise((resolve, reject) => {
       // find the author
       const authorDetails = authors.find(person => person.name === post.author);
-      if(authorDetails) {
+      if (authorDetails) {
         // "hydrate" the post object with the author object
         post.author = authorDetails;
         resolve(post);
       } else {
-        reject(Error('Can not find the author'));
+        reject(Error('Can not find author'));
       }
     });
   }
 
-  getPostById(3)
-    .then(post => {
-      return hydrateAuthor(post);
-    })
-    .then(post => {
+  getPostById(1)
+    .then(post => hydrateAuthor(post))
+    .then((post) => {
       console.log(post);
     })
-    .catch(err => {
+    .catch((err) => {
       console.error(err);
     });
-
-
-
 </script>
 </body>
 </html>
