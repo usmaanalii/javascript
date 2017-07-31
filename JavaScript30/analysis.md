@@ -275,6 +275,7 @@ You can access this value with the following code...
 const suffix = this.dataset.sizing;
 ```
 
+
 ### Tasks
 
 - [ ] Figure out why the range slider doesn't show when using dev tools
@@ -419,7 +420,7 @@ What I learned on this mini-project.
 
 ### Array.prototype.some()
 
-Checks against the array, and returns `true` if at least one item meets the condition.
+Checks against the array, and returns `true` if at least one item meets the condition specified.
 
 ``` javascript
 const isAdult = people.some(person => (new Date()).getFullYear() - person.year >= 19);
@@ -429,7 +430,7 @@ const isAdult = people.some(person => (new Date()).getFullYear() - person.year >
 
 ### Array.prototype.every()
 
-Checks against the array, and returns `true` if all items meets the condition.
+Checks against the array, and returns `true` if all items meets the condition specified.
 
 ``` javascript
 const allAdults = people.every(person => (new Date()).getFullYear() - person.year >= 19);
@@ -445,9 +446,9 @@ Checks against the array, and returns the result of the item, that meets the cri
 const index = comments.find(comment => comment => comment.id === 823423);
 ```
 
-### Array.prototype.some()
+### Array.prototype.findIndex()
 
-Checks against the array, and returns the `index` of the item that meets the condition.
+Checks against the array, and returns the `index` of the item that meets the condition specified.
 
 ``` javascript
 const index = comments.findIndex(comment => comment.id === 823423);
