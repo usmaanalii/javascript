@@ -1,0 +1,31 @@
+{
+  "name": "javascript-resources",
+  "version": "1.0.0",
+  "description": "Resources I have used to learn Javascript",
+  "main": "none",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/usyyy/Javascript.git"
+  },
+  "keywords": [
+    "javascript",
+    "web-dev",
+    "es6",
+    "testing"
+  ],
+  "author": "Usmaan Ali",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/usyyy/Javascript/issues"
+  },
+  "homepage": "https://github.com/usyyy/Javascript#readme",
+  "devDependencies": {
+    "eslint": "^4.3.0",
+    "eslint-config-prettier": "^2.3.0",
+    "eslint-plugin-prettier": "^2.1.2",
+    "prettier": "^1.5.3"
+  }
+}
