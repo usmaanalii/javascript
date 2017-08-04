@@ -1,5 +1,5 @@
 # Fake JavaScript Docs
 
-```js
-var x = 100;
+```javascript
+var x = 10;
 ```
