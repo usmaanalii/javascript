@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Destructuring!</title>
+</head>
+<body>
+<script>
+  const person = {
+    first: 'Wes',
+    last: 'Bos',
+    country: 'Canada',
+    city: 'Hamilton',
+    twitter: '@wesbos',
+  };
+
+  const { first, last } = person;
+
+  const wes = {
+    first: 'Wes',
+    last: 'Bos',
+    links: {
+      social: {
+        twitter: '@wesbos',
+        facebook: 'wesfb',
+      },
+    },
+    location: {
+      country: 'Canada',
+      city: 'Hamilton',
+    },
+  };
+
+  const { twitter:tweet, facebook:fb } = wes.links.social;
+
+  const settings = { width: 300, color: 'black' } // height, fontsize
+  const { width = 100, height = 100, color = 'blue', fontsize = 5 } = settings;
+
+</script>
+</body>
+</html>

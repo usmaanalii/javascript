@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Destructuring in Action!</title>
+</head>
+<body>
+<script>
+  function convertCurrency(amount) {
+    const converted = {
+      USD: amount * 0.76,
+      GPB: amount * 0.53,
+      AUD: amount * 1.01,
+      MEX: amount * 13.30,
+    };
+    return converted;
+  }
+
+  const { MEX, USD } = convertCurrency(100);
+  console.log(USD, MEX);
+
+  function tipCalculator({ total = 100, tip = 0.15, tax = 0.13 } = {}) {
+    return total + (tip * total) + (tax * total);
+  }
+
+  const bill = tipCalculator();
+  console.log(bill);
+</script>
+</body>
+</html>

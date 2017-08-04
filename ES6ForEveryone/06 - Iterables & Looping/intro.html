@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Iterables & Looping</title>
+</head>
+<body>
+<script>
+  /* eslint-disable */
+  Array.prototype.shuffle = function () {
+    var i = this.length, j, temp;
+    if (i == 0) return this;
+    while (--i) {
+      j = Math.floor(Math.random() * (i + 1));
+      temp = this[i];
+      this[i] = this[j];
+      this[j] = temp;
+    }
+    return this;
+  }
+
+  const cuts = ['Chuck', 'Brisket', 'Shank', 'Short Rib'];
+  cuts.shop = 'FISHSTA'
+
+  for (let i = 0; i < cuts.length; i += 1) {
+    console.log(cuts[i]);
+  }
+
+  // Can't abort the loop or skip an item!
+  cuts.forEach((cut) => {
+    console.log(cut);
+  });
+
+  // Iterates over EVERYTHING including added proto methods or properties
+  for (const index in cuts) {
+    console.log(cuts[index]);
+  }
+
+  for (const cut of cuts) {
+    if (cut === 'Brisket') {
+      continue;
+    }
+    console.log(cut);
+  }
+
+</script>
+</body>
+</html>

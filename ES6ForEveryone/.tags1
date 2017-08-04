@@ -1,0 +1,11 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	0	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.8	//
+Say Hello to ...Spread and ...Rest	/Applications/XAMPP/xamppfiles/htdocs/xampp/repos/javascript/ES6ForEveryone/08 - Say Hello to ...Spread and ...Rest/analysis.md	/^# Say Hello to ...Spread and ...Rest$/;"	function	line:1
+Spread Operator Introduction	/Applications/XAMPP/xamppfiles/htdocs/xampp/repos/javascript/ES6ForEveryone/08 - Say Hello to ...Spread and ...Rest/analysis.md	/^## Spread Operator Introduction$/;"	function	line:3
+More Spread Examples	/Applications/XAMPP/xamppfiles/htdocs/xampp/repos/javascript/ES6ForEveryone/08 - Say Hello to ...Spread and ...Rest/analysis.md	/^## More Spread Examples$/;"	function	line:35
+Spreading into a function	/Applications/XAMPP/xamppfiles/htdocs/xampp/repos/javascript/ES6ForEveryone/08 - Say Hello to ...Spread and ...Rest/analysis.md	/^## Spreading into a function$/;"	function	line:76
+The ...rest param in Functions and destructuring	/Applications/XAMPP/xamppfiles/htdocs/xampp/repos/javascript/ES6ForEveryone/08 - Say Hello to ...Spread and ...Rest/analysis.md	/^## The ...rest param in Functions and destructuring$/;"	function	line:83
