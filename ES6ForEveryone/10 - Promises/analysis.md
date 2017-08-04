@@ -59,7 +59,111 @@ p.then((data) => {
 
 ## Chaining Promises + Flow Control
 
+In this example, we see the benefits of using multiple Promises in the same flow. The goal here, is to take two lists of dictionaries (used to mimic extracts from a database), and use promises to join them. We're essentially matching an attribute from property across both dicts and extracting the required values.
+
+I'll show you the code first, and then try my best to explain.
+
+``` javascript
+const posts = [
+  { title: 'I love JavaScript', author: 'Wes Bos', id: 1 },
+  { title: 'CSS!', author: 'Chris Coyier', id: 2 },
+  { title: 'Dev tools tricks', author: 'Addy Osmani', id: 3 },
+];
+
+const authors = [
+  { name: 'Wes Bos', twitter: '@wesbos', bio: 'Canadian Developer' },
+  { name: 'Chris Coyier', twitter: '@chriscoyier', bio: 'CSS Tricks and CodePen' },
+  { name: 'Addy Osmani', twitter: '@addyosmani', bio: 'Googler' },
+];
+
+function getPostById(id) {
+  // create a new promise
+  return new Promise((resolve, reject) => {
+    // using a setTimeout to mimic a database
+    setTimeout(() => {
+      // find the post we want
+      const post = posts.find(singlePost => singlePost.id === id);
+      if (post) {
+        resolve(post); // send the post back
+      } else {
+        reject(Error('No Post Was Found'));
+      }
+    }, 500);
+  });
+}
+
+function hydrateAuthor(post) {
+  // create a new promise
+  return new Promise((resolve, reject) => {
+    // find the author
+    const authorDetails = authors.find(person => person.name === post.author);
+    if (authorDetails) {
+      // "hydrate" the post object with the author object
+      post.author = authorDetails;
+      resolve(post);
+    } else {
+      reject(Error('Can not find author'));
+    }
+  });
+}
+
+getPostById(1)
+  .then(post => hydrateAuthor(post))
+  .then((post) => {
+    console.log(post);
+  })
+  .catch((err) => {
+    console.error(err);
+  });
+```
+
+
+
+The `getPostById` function uses a promise to find the post id matching the parameter provided. In the case that the post is found, the id will be passed via `resolve`. If the id isn't matched in the list of dicts, then a suitable `Error` will be passed on.
+
+As you can see, a function called `hydrateAuthor` has also been created. This uses Promises again. The same `find` method is used, to retrieve properties of data from one of the list of dicts. If the author of the post provided is matched, then the post list of dicts will be updated. If it isn't matched, then again, a suitable `Error` message is returned.
+
+All of the `then` chains at the bottom of the file are reacting to the (if successful) posts being returned by `resolve`. If any of the `reject` methods are invoked from either function, then the `catch` method chained to the end, gets its chance to display the `Error` message associated with the function that failed.
+
+ 
 [Back to top](#top)
 **********
 
 ## Working with Multiple Promises
+
+Sometimes you might want to deal with multiple API's, and use the data returned from both of them together. Promises have an `all` method that allows you to group promises together and use the `resolve` data passed from both promises.
+
+You pass the promises as an `array`, and use them just like you would in `then` methods.
+
+``` javascript
+const weather = new Promise((resolve) => {
+  setTimeout(() => {
+    resolve({ temp: 29, conditions: 'Sunny with Clouds' });
+  }, 2000);
+});
+
+const tweets = new Promise((resolve) => {
+  setTimeout(() => {
+    resolve(['I like cake', 'BBQ is good too!']);
+  }, 500);
+});
+
+Promise
+  .all([weather, tweets])
+  .then((responses) => {
+    const [weatherInfo, tweetsInfo] = responses;
+    console.log(weatherInfo, tweetsInfo);
+  });
+
+const postsPromise = fetch('http://wesbos.com/wp-json/wp/v2/posts');
+const streetCarsPromise = fetch('http://data.ratp.fr/api/datasets/1.0/search/?q=paris');
+
+Promise
+  .all([postsPromise, streetCarsPromise])
+  .then(responses => Promise.all(responses.map(response => response.json())))
+  .then((responses) => {
+    console.log(responses);
+  });
+```
+
+This example shows that, `reject` methods are not a requirement when creating promises.
