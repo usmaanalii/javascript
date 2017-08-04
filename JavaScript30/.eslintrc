@@ -1,3 +1,12 @@
-"parserOptions": {
-   "ecmaVersion": 6
- }
+{
+"extends": "airbnb-base",
+"rules": {
+    "no-console": 0
+},
+"env": {
+        "browser": true
+    },
+"plugins": [
+        "html"
+    ]
+}
