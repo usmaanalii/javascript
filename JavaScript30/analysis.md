@@ -540,6 +540,7 @@ dogs.forEach(dog => {
 ## 10. Hold Shift and Check Checkboxes
 
 What I learned on this mini-project.
+
 ### let
 
 Using let for variable assignments is useful when you expect the the variable to change.
@@ -579,14 +580,14 @@ You can access the `video` element and manipulate its behavior via it's properti
 
 ### play and pause
 
-To assess whether or not the video is paused, the following property can be assessed
+To assess whether or not the video is paused, the following property can be checked.
 
 ``` javascript
 // returns a boolean
 video.paused;
 ```
 
-To play and pause the video you can call `play` and `pause` methods on the video object, like so
+To play and pause the video you, can call `play` and `pause` methods on the video object, like so
 
 ``` javascript
 const method = video.paused ? 'play' : 'pause';
@@ -595,7 +596,7 @@ video[method]();
 
 ### currentTime
 
-To move along a video you can change its `currentTime` property
+To move along a video you can change its `currentTime` property.
 
 ``` javascript
 video.currentTime += 10;
@@ -603,7 +604,8 @@ video.currentTime += 10;
 
 ### offsetWidth
 
-In this example, we had to assess how far along the cursor was for a horizontal range element, `offsetWidth` gives the length of the element, whereas `offsetX` gives the amount the cursor is along the x axis (of the element). The code get the time of the video relative to the scrubbed amount is shown below.
+In this example, we had to assess how far along the cursor was for a horizontal range element, `offsetWidth` gives the length of the element, whereas `offsetX` gives the amount the cursor is along the x axis (of the element).  
+The code to get the time of the video relative to the scrubbed amount is shown below.
 
 ``` javascript
 const scrubTime = (event.offsetX / progress.offsetWidth) * video.duration;
