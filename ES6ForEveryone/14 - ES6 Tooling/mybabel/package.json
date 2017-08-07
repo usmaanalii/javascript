@@ -1,5 +1,5 @@
 {
-  "name": "babel",
+  "name": "mybabel",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -9,14 +9,11 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "babel-cli": "^6.10.1",
-    "babel-plugin-transform-object-rest-spread": "^6.8.0",
-    "babel-preset-es2015": "^6.9.0"
+    "babel-cli": "^6.24.1",
+    "babel-preset-es2015": "^6.24.1"
   },
   "babel": {
-    "presets": [
-      "es2015"
-    ],
+    "presets": ["es2015"],
     "plugins": ["transform-object-rest-spread"]
   }
 }

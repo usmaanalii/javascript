@@ -724,14 +724,14 @@ In this case, the `age2` variable will keep its original value of `100`
 
 ### array
 
-When dealing with arrays, you need to be aware of the references.
+When dealing with arrays, you need to be aware of the concept of references.
 
 ``` javascript
 const players = ['Wes', 'Sarah', 'Ryan', 'Poppy'];
 const team = players;
 ```
 
-Here, modifying the `team` array's values will modify the `players` array, for example
+Here, modifying the `team` array's values will actually modify the `players` array, for example
 
 ``` javascript
 team[3] = 'Lux';
@@ -762,7 +762,7 @@ const person = {
 const cap2 = Object.assign({}, person, { age: 99 });
 ```
 
-The `Object.assign()` method takes in a
+The `Object.assign()` method takes in the following paramters...
 
 - `target` - In this case, this is a blank object `{}`
 - `sources` - Object(s) to add
@@ -792,9 +792,7 @@ A really cool feature implemented in this project, was the use of a ternary
 operator to dictate whether or not an attribute was given to some HTML.
 
 ``` javascript
-`
 <input type="checkbox" data-index=${index} id="item${index}" ${plate.done ? 'checked' : ''} />
-`
 ```
 
 Here, the ternary operator would either add `checked` or nothing, dictated by
@@ -834,6 +832,7 @@ function toggleDone(event) {
     populateList(items, itemsList);
 }
 ```
+
 `itemsList` is the parent element, that delegates the instruction to the
 `event.target` elements.
 
@@ -847,10 +846,8 @@ You can set and get items from `localStorage`.
 localStorage.setItem('items', JSON.stringify(items));
 ```
 
-Using `JSON.stringify()` here is necessary to convert it to a string
-representation of the object's key value pairs.
-
-An example of utilizing the data and adding it to a variable for use between browser reloads, is shown below.
+Using `JSON.stringify()` here is necessary, as it allows you to convert the object’s key value pairs to it’s string representation.
+An example is shown below, which demonstrates utilizing the data and adding it to a variable to use between browser reloads.
 
 This enables your pages to have continuity based on existing user behavior.
 
@@ -868,6 +865,7 @@ use.
 ## 16. Mouse Move Shadow
 
 What I learned on this mini-project.
+
 ### destructuring objects
 
 This is a neat way of assigning multiple `key:value` pairs to a single
