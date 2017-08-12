@@ -1,33 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <title>Generators</title>
 </head>
+
 <body>
-<script>
+  <script>
+    function ajax(url) {
+      fetch(url).then(data => data.json()).then(data => dataGen.next(data));
+    }
 
-  function ajax(url) {
-    fetch(url).then(data => data.json()).then(data => dataGen.next(data))
-  }
+    function* steps() {
+      console.log('fetching beers');
+      const beers = yield ajax('http://api.react.beer/v2/search?q=hops&type=beer');
+      console.log(beers);
 
-  function* steps() {
-    console.log('fetching beers');
-    const beers = yield ajax('http://api.react.beer/v2/search?q=hops&type=beer');
-    console.log(beers);
+      console.log('fetching wes');
+      const wes = yield ajax('https://api.github.com/users/wesbos');
+      console.log(wes);
 
-    console.log('fetching wes');
-    const wes = yield ajax('https://api.github.com/users/');
-    console.log(wes);
+      console.log('fetching fatJoe');
+      const fatJoe = yield ajax('https://api.discogs.com/artists/51988');
+      console.log(fatJoe);
+    }
 
-    console.log('fetching fat joe');
-    const fatJoe = yield ajax('https://api.discogs.com/artists/51988');
-    console.log(fatJoe);
-  }
+    const dataGen = steps();
 
-  const dataGen = steps();
-  dataGen.next(); // kick it off
-
-</script>
+    dataGen.next(); // kick it off
+  </script>
 </body>
+
 </html>

@@ -6,6 +6,7 @@
 </head>
 <body>
 <script>
+
   function* listPeople() {
     let i = 0;
     yield i;
@@ -28,15 +29,12 @@
   ];
 
   function* loop(arr) {
-    console.log(inventors);
     for (const item of arr) {
       yield item;
     }
   }
 
   const inventorGen = loop(inventors);
-
-
 </script>
 </body>
 </html>
