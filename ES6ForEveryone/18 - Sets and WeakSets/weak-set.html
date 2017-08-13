@@ -12,9 +12,12 @@
   const weakSauce = new WeakSet([dog1, dog2]);
 
   console.log(weakSauce);
+
+  // for (const dog of weakSauce) {
+  //   console.log(dog);
+  // }
   dog1 = null;
   console.log(weakSauce);
-
 </script>
 </body>
 </html>
