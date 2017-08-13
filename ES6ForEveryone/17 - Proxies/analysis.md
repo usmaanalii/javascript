@@ -24,6 +24,9 @@ const personProxy = new Proxy(person, {
 
 Here, the `get` and `set` methods have been modified, to return the upper case versions of the properties added to the `person` object. So, using `person.friend = 'usy'` to set the friend property, will actually insert `USY` into the friend attribute.
 
+[Back to top](#top)
+**********
+
 ## Another Proxy Example
 
 The example shown here, can be applied to a variety of scenarios, but for demonstration purposes, phone numbers is a pretty common issue. As we all know, there are many ways and formats that people will use to present their phone numbers. To get this type of data to a uniform format, proxies can be used. This involves the `get` and `set` operations being updated.
@@ -86,3 +89,6 @@ safety.ID = 200;
 ```
 
 **Note** using the `handler` of `Proxy` as a separately defined Object.
+
+[Back to top](#top)
+**********
