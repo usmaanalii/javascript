@@ -9,7 +9,9 @@
     - Mocha
     - Chai
 
-##### The following repositories contain code from the [FCC](https://www.freecodecamp.org/) platform (a large amount of which was written in Javascript)
+### Note
+
+The following repositories contain code from the [FCC](https://www.freecodecamp.org/) platform (a large amount of which was written in Javascript)
 
 * [Algorithms](https://github.com/usyyy/freecodecamp-algorithms)
 
